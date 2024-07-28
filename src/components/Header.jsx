@@ -18,9 +18,11 @@ const Header = () => {
           src="https://cdn-icons-png.flaticon.com/512/8182/8182885.png"
           alt="Hamberger Menu"
         />
-        <h3 className="font-extrabold text-2xl pl-2 text-blue-600">
-          PrimeTube
-        </h3>
+        <a href="/">
+          <h3 className="font-extrabold text-2xl pl-2 text-blue-600">
+            PrimeTube
+          </h3>
+        </a>
       </div>
       <div className="col-span-10 pl-60 flex items-center">
         <input
