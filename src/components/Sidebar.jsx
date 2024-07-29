@@ -19,6 +19,7 @@ import { MdOutlineSportsCricket } from "react-icons/md";
 import { LiaDiscourse } from "react-icons/lia";
 import { GiClothes } from "react-icons/gi";
 import { SiGooglepodcasts } from "react-icons/si";
+import "../utils/sidebar.css";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -27,7 +28,7 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="py-5 px-5 shadow-lg w-52">
+    <div className="py-5 px-5 shadow-lg w-52 overflow-y-scroll hide-scrollbar">
       <ul className="mb-3">
         <li className="py-3">
           <Link to="/" className="flex">
