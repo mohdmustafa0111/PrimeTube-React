@@ -4,35 +4,35 @@ import { GrDislike } from "react-icons/gr";
 const CommentsContainer = () => {
   const commentData = [
     {
-      name: "Akshay Saini",
+      name: "Harry Joebid",
       text: "This is the dummy text comment by user.",
       replies: [
         {
-          name: "Akshay Saini",
+          name: "Harry Joebid",
           text: "This is the dummy text comment by user.",
           replies: [],
         },
         {
-          name: "Akshay Saini",
+          name: "Harry Joebid",
           text: "This is the dummy text comment by user.",
           replies: [
             {
-              name: "Akshay Saini",
+              name: "Harry Joebid",
               text: "This is the dummy text comment by user.",
               replies: [
                 {
-                  name: "Akshay Saini",
+                  name: "Harry Joebid",
                   text: "This is the dummy text comment by user.",
                   replies: [
                     {
-                      name: "Akshay Saini",
+                      name: "Harry Joebid",
                       text: "This is the dummy text comment by user.",
                       replies: [],
                     },
                   ],
                 },
                 {
-                  name: "Akshay Saini",
+                  name: "Harry Joebid",
                   text: "This is the dummy text comment by user.",
                   replies: [],
                 },
@@ -43,22 +43,22 @@ const CommentsContainer = () => {
       ],
     },
     {
-      name: "Akshay Saini",
+      name: "Harry Joebid",
       text: "This is the dummy text comment by user.",
       replies: [],
     },
     {
-      name: "Akshay Saini",
+      name: "Harry Joebid",
       text: "This is the dummy text comment by user.",
       replies: [],
     },
     {
-      name: "Akshay Saini",
+      name: "Harry Joebid",
       text: "This is the dummy text comment by user.",
       replies: [],
     },
     {
-      name: "Akshay Saini",
+      name: "Harry Joebid",
       text: "This is the dummy text comment by user.",
       replies: [],
     },
@@ -91,6 +91,7 @@ const CommentsContainer = () => {
       <div key={index}>
         <Comment data={comment} />
         <div className="pl-5 ml-5 border border-l-black">
+          {/*  A recursive function is a function that calls itself somewhere within the body of the function */}
           <CommentsList comments={comment.replies} />
         </div>
       </div>
@@ -98,7 +99,7 @@ const CommentsContainer = () => {
   };
 
   return (
-    <div className="m-2 p-2">
+    <div className="mx-2 pb-2 pl-2">
       <h1 className="text-2xl font-bold mb-2">Comments:</h1>
       <CommentsList comments={commentData} />
     </div>
