@@ -4,6 +4,9 @@ import { toggleMenu } from "../utils/appSlice";
 import { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/searchSlice";
+import { BsFillPlayBtnFill } from "react-icons/bs";
+import { FaUserCircle } from "react-icons/fa";
+import { IoMdNotificationsOutline } from "react-icons/io";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -64,8 +67,9 @@ const Header = () => {
           src="https://cdn-icons-png.flaticon.com/512/8182/8182885.png"
           alt="Hamberger Menu"
         />
+        <BsFillPlayBtnFill className="text-blue-600 text-2xl ml-2" />
         <a href="/">
-          <h3 className="font-extrabold text-2xl pl-2 text-blue-600">
+          <h3 className="font-extrabold text-2xl ml-1 text-blue-600">
             PrimeTube
           </h3>
         </a>
@@ -105,12 +109,9 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="col-span-1">
-        <img
-          className="h-8 pt-1"
-          src="https://t3.ftcdn.net/jpg/05/17/79/88/360_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg"
-          alt="user-icon"
-        />
+      <div className="col-span-1 flex items-center">
+        <IoMdNotificationsOutline className="text-[1.7rem] text-gray-500" />
+        <FaUserCircle className="ml-6 text-2xl text-gray-500" />
       </div>
     </div>
   );
