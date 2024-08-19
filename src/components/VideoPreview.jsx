@@ -8,7 +8,6 @@ const VideoPreview = ({ videoId }) => {
   const getVideo = async () => {
     const data = await fetch(VIDEO_DETAILS_API + videoId);
     const json = await data.json();
-    console.log(json.items[0]);
     setVideo(json.items[0]);
   };
 

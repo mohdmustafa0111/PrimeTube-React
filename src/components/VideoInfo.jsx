@@ -1,4 +1,4 @@
-import { abbreviateNumber } from "../utils/abbreviateNumber";
+import { abbreviateNumber } from "../utils/helper";
 import { BiLike } from "react-icons/bi";
 import { BiDislike } from "react-icons/bi";
 import { PiShareFat } from "react-icons/pi";

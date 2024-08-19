@@ -1,8 +1,8 @@
-import { abbreviateNumber } from "../utils/helper";
+import moment from "moment";
 
-const VideoCard = ({ info }) => {
-  const { snippet, statistics } = info;
-  const { channelTitle, title, thumbnails } = snippet;
+const ResultVideoCard = ({ info }) => {
+  const { snippet } = info;
+  const { channelTitle, title, thumbnails, publishedAt } = snippet;
 
   return (
     <div className="px-2 m-2 w-96 shadow-lg">
@@ -14,10 +14,10 @@ const VideoCard = ({ info }) => {
       <ul>
         <li className="font-bold py-2">{title}</li>
         <li>{channelTitle}</li>
-        <li>{abbreviateNumber(statistics.viewCount)} views</li>
+        <li>{moment(publishedAt).fromNow()}</li>
       </ul>
     </div>
   );
 };
 
-export default VideoCard;
+export default ResultVideoCard;

@@ -13,3 +13,8 @@ export const VIDEO_DETAILS_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=" +
   GOOGLE_API_KEY +
   "&id=";
+
+export const SEARCH_RESULT_API =
+  "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=" +
+  GOOGLE_API_KEY +
+  "&q=";
