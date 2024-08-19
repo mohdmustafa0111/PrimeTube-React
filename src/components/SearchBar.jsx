@@ -33,7 +33,10 @@ const SearchBar = ({ setSearchQuery, suggestions }) => {
           onFocus={() => setShowSuggestions(true)}
           onBlur={() => setShowSuggestions(false)}
         />
-        <button className="border border-gray-500 px-6 py-3 rounded-r-full focus:outline-none focus:ring-1 focus:border-blue-500 bg-gray-200">
+        <button
+          className="border border-gray-500 px-6 py-3 rounded-r-full focus:outline-none focus:ring-1 focus:border-blue-500 bg-gray-200"
+          onClick={() => handleSearch(query)}
+        >
           <GoSearch />
         </button>
       </div>
