@@ -11,7 +11,7 @@ const VideoInfo = ({ video }) => {
 
   if (video.length === 0) return null;
   return (
-    <div className="md:w-[65rem] w-[28rem]">
+    <div className="md:w-[65rem] w-[25rem]">
       <h1 className="md:text-xl md:flex md:flex-wrap text-sm font-bold mt-2">
         {title}
       </h1>

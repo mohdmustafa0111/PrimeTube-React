@@ -68,14 +68,14 @@ const Header = () => {
           alt="Hamberger Menu"
         />
         <Link to={"/"} className="flex items-center">
-          <BsFillPlayBtnFill className="text-blue-600 text-2xl ml-2" />
-          <h3 className="font-extrabold text-2xl ml-1 text-blue-600">
+          <BsFillPlayBtnFill className="text-blue-600 text-2xl md:ml-2 ml-1" />
+          <h3 className="font-extrabold md:text-2xl text-xl ml-1 text-blue-600">
             PrimeTube
           </h3>
         </Link>
       </div>
 
-      <div id="search" className="md:col-span-10 md:ml-72 ml-6">
+      <div id="search" className="md:col-span-10 md:ml-72 ml-2">
         <SearchBar setSearchQuery={setSearchQuery} suggestions={suggestions} />
       </div>
 
