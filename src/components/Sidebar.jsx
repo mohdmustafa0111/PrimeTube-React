@@ -28,7 +28,7 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="py-5 px-5 shadow-lg w-52 overflow-y-scroll hide-scrollbar">
+    <div className="hidden md:block py-5 px-5 shadow-lg w-52 overflow-y-scroll hide-scrollbar">
       <ul className="mb-3">
         <li className="py-3">
           <Link to="/" className="flex">

@@ -14,7 +14,7 @@ const SearchBar = ({ setSearchQuery, suggestions }) => {
 
   return (
     <div>
-      <div className="flex items-center">
+      <div className="flex items-center w-96 md:w-[50rem]">
         <input
           onKeyDown={(e) => {
             if (e.key === "Enter") {
@@ -41,7 +41,7 @@ const SearchBar = ({ setSearchQuery, suggestions }) => {
         </button>
       </div>
       {showSuggestions && (
-        <div className="fixed bg-white py-2 px-3 w-[29rem] shadow-lg rounded-lg">
+        <div className="fixed bg-white py-2 px-3 md:w-[29rem] w-[15rem] shadow-lg rounded-lg">
           <ul>
             {suggestions.map((s) => (
               <li key={s} className="py-2 flex items-center hover:bg-gray-100">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { SEARCH_RESULT_API } from "../utils/constants";
 import { Link, useSearchParams } from "react-router-dom";
 import ResultVideoCard from "./ResultVideoCard";
+import "../utils/sidebar.css";
 
 const Results = () => {
   const [video, setVideo] = useState([]);
@@ -22,7 +23,7 @@ const Results = () => {
   }, [search_query]);
 
   return (
-    <div className="flex flex-wrap w-[75rem] m-2">
+    <div className="flex flex-wrap md:w-[75rem] m-2 overflow-y-scroll hide-scrollbar justify-center">
       {video.map((video) => {
         return (
           <Link key={video?.id?.videoId} to={"/watch?v=" + video?.id?.videoId}>

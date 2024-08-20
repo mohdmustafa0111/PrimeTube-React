@@ -1,4 +1,3 @@
-import { GoSearch } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { useEffect, useState } from "react";
@@ -60,11 +59,11 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 grid grid-flow-col p-3 shadow-lg bg-white">
-      <div className="flex items-center col-span-1">
+    <div className="fixed top-0 left-0 right-0 md:grid md:grid-flow-col p-3 shadow-lg bg-white flex items-center">
+      <div className="flex items-center md:col-span-1">
         <img
           onClick={() => toggleMenuHandler()}
-          className="h-6 cursor-pointer"
+          className="h-6 hidden md:block cursor-pointer"
           src="https://cdn-icons-png.flaticon.com/512/8182/8182885.png"
           alt="Hamberger Menu"
         />
@@ -76,13 +75,13 @@ const Header = () => {
         </Link>
       </div>
 
-      <div id="search" className="col-span-10 pl-60">
+      <div id="search" className="md:col-span-10 md:ml-72 ml-6">
         <SearchBar setSearchQuery={setSearchQuery} suggestions={suggestions} />
       </div>
 
-      <div className="col-span-1 flex items-center">
-        <IoMdNotificationsOutline className="text-[1.7rem] text-gray-500" />
-        <FaUserCircle className="ml-6 text-2xl text-gray-500" />
+      <div className="md:col-span-1 flex items-center">
+        <IoMdNotificationsOutline className="hidden md:block text-[1.7rem] text-gray-500" />
+        <FaUserCircle className="hidden md:block ml-6 text-2xl text-gray-500" />
       </div>
     </div>
   );

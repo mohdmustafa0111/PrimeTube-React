@@ -17,13 +17,13 @@ const WatchPage = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="p-5 flex">
+      <div className="p-5 md:flex md:flex-wrap">
         <VideoPreview videoId={videoId} />
-        <div>
+        <div className="flex justify-center">
           <LiveChat />
         </div>
       </div>
-      <div className="w-[1080px]">
+      <div className="md:w-[1080px] w-[28rem]">
         <CommentsContainer />
       </div>
     </div>

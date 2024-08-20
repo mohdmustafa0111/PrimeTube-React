@@ -18,8 +18,7 @@ const VideoPreview = ({ videoId }) => {
   return (
     <div>
       <iframe
-        width="1050"
-        height="500"
+        className="md:h-[32rem] h-[18rem] md:w-[65rem] w-[28rem] rounded-lg"
         src={"https://www.youtube.com/embed/" + videoId}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

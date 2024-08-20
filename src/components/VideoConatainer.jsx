@@ -17,7 +17,7 @@ const VideoConatainer = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap w-75rem">
+    <div className="flex flex-wrap md:w-[75rem] justify-center">
       {videos.map((video) => (
         <Link key={video.id} to={"/watch?v=" + video.id}>
           <VideoCard info={video} />
