@@ -63,6 +63,8 @@ const Header = () => {
     dispatch(toggleMenu());
   };
 
+  if (!suggestions) return null;
+
   return (
     <div className="fixed top-0 left-0 right-0 md:grid md:grid-flow-col p-3 shadow-lg bg-white flex items-center">
       <div className="flex items-center md:col-span-1">
