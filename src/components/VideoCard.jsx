@@ -8,7 +8,7 @@ const VideoCard = ({ info }) => {
     <div className="px-2 md:m-2 m-3 w-96 shadow-lg">
       <img
         className="rounded-lg w-screen"
-        src={thumbnails.medium.url}
+        src={thumbnails?.medium?.url}
         alt="image"
       />
       <ul>

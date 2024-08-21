@@ -1,16 +1,30 @@
 import { useEffect, useState } from "react";
-import { YOUTUBE_VIDEOS_API } from "../utils/constants";
+import { SEARCH_RESULT_API, YOUTUBE_VIDEOS_API } from "../utils/constants";
 import VideoCard from "./VideoCard";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const VideoConatainer = () => {
+  // initial state variables
+  const [searchParams] = useSearchParams();
+  const filter = searchParams.get("filter");
+
   const [videos, setVideos] = useState([]);
 
   const getVideos = async () => {
     try {
-      const data = await fetch(YOUTUBE_VIDEOS_API);
+      const data = await fetch(
+        !filter ? YOUTUBE_VIDEOS_API : SEARCH_RESULT_API + filter
+      );
       const json = await data.json();
-      setVideos(json.items);
+
+      const onlyVideos = json.items.filter((video) => {
+        if (!filter) {
+          return video.kind === "youtube#video";
+        } else {
+          return video.id.kind === "youtube#video";
+        }
+      });
+      setVideos(onlyVideos);
     } catch (error) {
       console.log(error);
     }
@@ -18,17 +32,20 @@ const VideoConatainer = () => {
 
   useEffect(() => {
     getVideos();
-  }, []);
+  }, [searchParams, filter]);
 
   if (!videos) return null;
 
   return (
     <div className="flex flex-wrap md:w-[75rem] justify-center">
-      {videos.map((video) => (
-        <Link key={video.id} to={"/watch?v=" + video.id}>
-          <VideoCard info={video} />
-        </Link>
-      ))}
+      {videos?.map((video) => {
+        const videoId = !filter ? video.id : video.etag;
+        return (
+          <Link key={videoId} to={"/watch?v=" + videoId}>
+            <VideoCard info={video} filter={filter} />
+          </Link>
+        );
+      })}
     </div>
   );
 };

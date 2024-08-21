@@ -30,7 +30,7 @@ const Results = () => {
 
   return (
     <div className="flex flex-wrap md:w-[75rem] m-2 overflow-y-scroll hide-scrollbar justify-center">
-      {video.map((video) => {
+      {video?.map((video) => {
         return (
           <Link key={video?.id?.videoId} to={"/watch?v=" + video?.id?.videoId}>
             <ResultVideoCard key={video.id.videoId} info={video} />
