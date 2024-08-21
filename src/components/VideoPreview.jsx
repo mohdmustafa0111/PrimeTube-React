@@ -15,6 +15,8 @@ const VideoPreview = ({ videoId }) => {
     getVideo();
   }, []);
 
+  if (!video) return null;
+
   return (
     <div>
       <iframe

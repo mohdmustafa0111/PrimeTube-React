@@ -10,17 +10,23 @@ const Results = () => {
   const search_query = searchParams.get("search_query");
 
   const getVideo = async () => {
-    const data = await fetch(SEARCH_RESULT_API + search_query);
-    const json = await data.json();
-    const onlyVideos = json.items.filter((video) => {
-      return video.id.kind === "youtube#video";
-    });
-    setVideo(onlyVideos);
+    try {
+      const data = await fetch(SEARCH_RESULT_API + search_query);
+      const json = await data.json();
+      const onlyVideos = json.items.filter((video) => {
+        return video.id.kind === "youtube#video";
+      });
+      setVideo(onlyVideos);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     getVideo();
   }, [search_query]);
+
+  if (!video) return null;
 
   return (
     <div className="flex flex-wrap md:w-[75rem] m-2 overflow-y-scroll hide-scrollbar justify-center">

@@ -7,14 +7,20 @@ const VideoConatainer = () => {
   const [videos, setVideos] = useState([]);
 
   const getVideos = async () => {
-    const data = await fetch(YOUTUBE_VIDEOS_API);
-    const json = await data.json();
-    setVideos(json.items);
+    try {
+      const data = await fetch(YOUTUBE_VIDEOS_API);
+      const json = await data.json();
+      setVideos(json.items);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     getVideos();
   }, []);
+
+  if (!videos) return null;
 
   return (
     <div className="flex flex-wrap md:w-[75rem] justify-center">
