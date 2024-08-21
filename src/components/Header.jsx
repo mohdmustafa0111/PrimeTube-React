@@ -22,16 +22,21 @@ const Header = () => {
   // - Caching
 
   const getSearchSuggestions = async () => {
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-    const json = await data.json();
-    setSuggestions(json[1]);
+    try {
+      const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+      const json = await data.json();
+      setSuggestions(json[1]);
 
-    // Update in the Cache
-    dispatch(
-      cacheResults({
-        [searchQuery]: json[1],
-      })
-    );
+      // Update in the Cache
+      if (searchQuery)
+        dispatch(
+          cacheResults({
+            [searchQuery]: json[1],
+          })
+        );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -67,15 +72,17 @@ const Header = () => {
           src="https://cdn-icons-png.flaticon.com/512/8182/8182885.png"
           alt="Hamberger Menu"
         />
-        <Link to={"/"} className="flex items-center">
-          <BsFillPlayBtnFill className="text-blue-600 text-2xl md:ml-2 ml-1" />
-          <h3 className="font-extrabold md:text-2xl text-xl ml-1 text-blue-600">
-            PrimeTube
-          </h3>
+        <Link to={"/"}>
+          <div className="flex items-center">
+            <BsFillPlayBtnFill className="text-blue-600 md:text-2xl text-lg md:ml-2 ml-0" />
+            <h3 className="md:font-extrabold font-bold md:text-2xl text-lg ml-1 text-blue-600">
+              PrimeTube
+            </h3>
+          </div>
         </Link>
       </div>
 
-      <div id="search" className="md:col-span-10 md:ml-72 ml-2">
+      <div id="search" className="md:col-span-10 md:ml-72 ml-3">
         <SearchBar setSearchQuery={setSearchQuery} suggestions={suggestions} />
       </div>
 

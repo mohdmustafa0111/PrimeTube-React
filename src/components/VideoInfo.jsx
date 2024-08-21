@@ -11,7 +11,7 @@ const VideoInfo = ({ video }) => {
 
   if (video.length === 0) return null;
   return (
-    <div className="md:w-[65rem] w-[25rem]">
+    <div className="md:w-[65rem] w-[22rem]">
       <h1 className="md:text-xl md:flex md:flex-wrap text-sm font-bold mt-2">
         {title}
       </h1>
@@ -23,16 +23,16 @@ const VideoInfo = ({ video }) => {
           </button>
         </div>
         <div className="flex my-2 justify-between">
-          <div className="mx-1 py-2 px-5 md:text-base text-sm font-semibold flex items-center bg-slate-200 rounded-3xl">
+          <div className="mx-1 py-2 px-4 md:text-base text-sm font-semibold flex items-center bg-slate-200 rounded-3xl">
             <BiLike className="md:text-2xl text-sm mr-1" />
             {abbreviateNumber(likeCount)} |
             <BiDislike className="md:text-2xl text-sm ml-2" />
           </div>
-          <div className="mx-1 py-2 px-5 md:text-base text-sm font-semibold flex items-center bg-slate-200 rounded-3xl">
+          <div className="mx-1 py-2 px-4 md:text-base text-sm font-semibold flex items-center bg-slate-200 rounded-3xl">
             <PiShareFat className="md:text-2xl text-sm mr-1" />
             Share
           </div>
-          <div className="mx-1 py-2 px-5 md:text-base text-sm font-semibold flex items-center bg-slate-200 rounded-3xl">
+          <div className="mx-1 py-2 px-4 md:text-base text-sm font-semibold flex items-center bg-slate-200 rounded-3xl">
             <LiaDownloadSolid className="md:text-2xl text-sm" />
             Download
           </div>

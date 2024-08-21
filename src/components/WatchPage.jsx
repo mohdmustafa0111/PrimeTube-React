@@ -23,7 +23,7 @@ const WatchPage = () => {
           <LiveChat />
         </div>
       </div>
-      <div className="md:w-[1080px] w-[25rem]">
+      <div className="md:w-[1080px] w-[23rem]">
         <CommentsContainer />
       </div>
     </div>
